@@ -56,8 +56,8 @@ $(document).ready(function() {
   train.on("child_added", function(snapshot) {
     let newRow = $("<tr>");
 
-    let frequency = snapshot.val().frequency;
-    let firstTrainTime = snapshot.val().firsTrainTime;
+    let frequency = snapshot.val().freq;
+    let firstTrainTime = snapshot.val().first;
     let nextArrival = getNextArrivalTime(firstTrainTime, frequency);
     // console.log(nextArrival);
     let minsAway = moment().to(moment(nextArrival, "HH:mm"));
