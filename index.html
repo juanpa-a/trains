@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <!-- Moments JS Reference -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- Train schedule logic reference -->
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <hr>
+        <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody id="trainsTable">
+                </tbody>
+        </table>
+        <!-- TRAIN TABLE END    -->
+        <hr>
+        <!-- NEW TRAIN FORM INIT-->
+        <form>
+            <div class="form-group">
+                <label for="name">Train Name</label>
+                <input type="text" class="form-control" id="trainName" placeholder="Enter train name" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="destination"></label>Destination</label>
+                <input type="text" class="form-control" id="destinationText" placeholder="End Destination" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="firstTrain"></label>First Train Time (HH:mm)</label>
+                <input type="text" pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}" class="form-control" id="firstTrainTime" 
+                    placeholder="00:00" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="Frequency"></label>Frequency (mins)</label>
+                <input type="number" class="form-control" id="frequencyMins" placeholder="00" autocomplete="off">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
+        </form>
+            <!-- FORM END-->
+    </div>
+</body>
+</html>
